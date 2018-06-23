@@ -1,0 +1,74 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.xunz.commonproject"
+        minSdkVersion 15
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+
+    signingConfigs {
+        commonConfig {
+            keyAlias 'common'
+            keyPassword 'commonjava'
+            storeFile file('common.jks')
+            storePassword 'commonjava'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.commonConfig
+        }
+        debug {
+            signingConfig signingConfigs.commonConfig
+        }
+    }
+
+    defaultConfig {
+        ndk {
+            // 设置支持的SO库架构
+            abiFilters 'armeabi', 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+        }
+
+        packagingOptions {
+            exclude 'META-INF/rxjava.properties'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+
+//ui
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    implementation 'com.trello.rxlifecycle2:rxlifecycle:2.1.0'
+    implementation 'in.srain.cube:ultra-ptr:1.0.11'
+    implementation 'com.trello.rxlifecycle2:rxlifecycle-components:2.1.0'
+    implementation 'com.airbnb.android:lottie:2.1.0'
+    implementation 'me.yokeyword:fragmentation:1.0.0'
+    implementation 'cn.bingoogolapple:bga-swipebacklayout:1.1.0@aar'
+
+    //RxJava + Retrofit（异步 网络请求）
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.1.2'
+    implementation 'io.reactivex:rxjava:1.2.1'
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.0.0-beta4'
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
+    implementation 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'
+
+    //dogger
+    implementation 'com.google.dagger:dagger:2.7'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.7'
+
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.android.support:design:26.+'//
+}
