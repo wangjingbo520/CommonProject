@@ -40,6 +40,9 @@ android {
             exclude 'META-INF/rxjava.properties'
         }
     }
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+    }
 }
 
 dependencies {
@@ -49,6 +52,8 @@ dependencies {
 
 //ui
     implementation 'com.jakewharton:butterknife:8.8.1'
+    implementation 'com.android.support:support-vector-drawable:26.1.0'
+    implementation 'com.android.support:support-v4:26.1.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     implementation 'com.trello.rxlifecycle2:rxlifecycle:2.1.0'
     implementation 'in.srain.cube:ultra-ptr:1.0.11'
@@ -65,10 +70,8 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.0.0-beta4'
     implementation 'com.squareup.retrofit2:adapter-rxjava:2.0.0-beta4'
 
-    //dogger
-    implementation 'com.google.dagger:dagger:2.7'
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.7'
-
     implementation 'com.github.bumptech.glide:glide:3.7.0'
     implementation 'com.android.support:design:26.+'//
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.4-4'
+   // implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.0.4-4'
 }

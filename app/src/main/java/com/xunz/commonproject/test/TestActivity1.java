@@ -5,10 +5,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.xunz.commonproject.MainActivity;
 import com.xunz.commonproject.R;
 import com.xunz.commonproject.base.MyBaseActivity;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 public class TestActivity1 extends MyBaseActivity {
 
@@ -23,14 +25,12 @@ public class TestActivity1 extends MyBaseActivity {
     @Override
     public void onRetry() {
         showSuccess();
-
     }
 
     @Override
     public int getContentLayout() {
         return R.layout.activity_test1;
     }
-
 
 
     @Override
@@ -41,8 +41,13 @@ public class TestActivity1 extends MyBaseActivity {
 
     @Override
     public void initData() {
-
+        showSuccess();
     }
 
 
+    @OnClick(R.id.button4)
+    public void onViewClicked() {
+        startTo(MainActivity.class);
+
+    }
 }

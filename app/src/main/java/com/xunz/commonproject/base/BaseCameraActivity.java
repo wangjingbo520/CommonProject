@@ -102,12 +102,14 @@ public class BaseCameraActivity extends BaseActivity {
             mPopupWindow = new SelectPicPopWindow(mContext, new SelectPicPopWindow.Callback() {
                 @Override
                 public void onCallback(int param) {
-                    switch (param){
+                    switch (param) {
                         case 1:
                             callCamerImage(crop);
                             break;
                         case 2:
                             callLocalImage(crop);
+                            break;
+                        default:
                             break;
                     }
                 }
@@ -193,7 +195,8 @@ public class BaseCameraActivity extends BaseActivity {
     }
 
     private File getFile() {
-        String filePath = MyApplication.BASEPATH+"image/" +"I"+ System.currentTimeMillis()+ ".jpg";
+        String filePath = MyApplication.BASEPATH + "image/" + "I" + System.currentTimeMillis() +
+                ".jpg";
         File file = new File(filePath);
         if (!file.exists()) {
             file.getParentFile().mkdirs();
@@ -243,6 +246,8 @@ public class BaseCameraActivity extends BaseActivity {
                     handleImageFile(imageFile.getAbsolutePath());
                 }
                 break;
+            default:
+                break;
         }
     }
 
@@ -283,7 +288,8 @@ public class BaseCameraActivity extends BaseActivity {
         if (data != null && data.getData() != null) {
             Uri selectedImage = data.getData();
             String[] filePathColumns = {MediaStore.Images.Media.DATA};
-            Cursor c = this.getContentResolver().query(selectedImage, filePathColumns, null, null, null);
+            Cursor c = this.getContentResolver().query(selectedImage, filePathColumns, null,
+                    null, null);
             c.moveToFirst();
             int columnIndex = c.getColumnIndex(filePathColumns[0]);
             String picturePath = c.getString(columnIndex);
@@ -350,9 +356,11 @@ public class BaseCameraActivity extends BaseActivity {
                     return Environment.getExternalStorageDirectory() + "/" + split[1];
                 }
                 // TODO handle non-primary volumes
-            } else if (isDownloadsDocument(uri)) {// DownloadsProvider
+            } else if (isDownloadsDocument(uri)) {
+                // DownloadsProvider
                 final String id = DocumentsContract.getDocumentId(uri);
-                final Uri contentUri = ContentUris.withAppendedId(Uri.parse("content://downloads/public_downloads"), Long.valueOf(id));
+                final Uri contentUri = ContentUris.withAppendedId(Uri.parse
+                        ("content://downloads/public_downloads"), Long.valueOf(id));
                 return getDataColumn(context, contentUri, null, null);
             } else if (isMediaDocument(uri)) {
                 final String docId = DocumentsContract.getDocumentId(uri);
@@ -385,12 +393,14 @@ public class BaseCameraActivity extends BaseActivity {
         return null;
     }
 
-    public static String getDataColumn(Context context, Uri uri, String selection, String[] selectionArgs) {
+    public static String getDataColumn(Context context, Uri uri, String selection, String[]
+            selectionArgs) {
         Cursor cursor = null;
         final String column = "_data";
         final String[] projection = {column};
         try {
-            cursor = context.getContentResolver().query(uri, projection, selection, selectionArgs, null);
+            cursor = context.getContentResolver().query(uri, projection, selection,
+                    selectionArgs, null);
             if (cursor != null && cursor.moveToFirst()) {
                 final int index = cursor.getColumnIndexOrThrow(column);
                 return cursor.getString(index);

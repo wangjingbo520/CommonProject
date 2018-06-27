@@ -1,27 +1,86 @@
 package com.xunz.commonproject.common.utils;
 
+import android.os.Handler;
+import android.os.Looper;
 import android.widget.Toast;
 
 import com.xunz.commonproject.MyApplication;
 
-
 /**
- * 作者: liangzixun
- * 时间: 2017/9/8 09:22
- * 邮箱: liangzixun@eims.com.cn
+ * com.xunz.commonproject.common.utils
+ *
+ * @author 王静波
+ * @date 2018/6/27
+ * describe
  */
 public class ToastUtil {
-    private static Toast mToast;
+    private static Handler handler = new Handler(Looper.getMainLooper());
 
-    private static void init(){
-        mToast= Toast.makeText(MyApplication.context,"", Toast.LENGTH_SHORT);
+    private static Toast toast = null;
+
+    private static Object synObj = new Object();
+
+    public static void showMessage(final String msg) {
+        showMessage(msg, Toast.LENGTH_SHORT);
     }
 
-    public static void show(String tip){
-        if (mToast==null){
-            init();
+
+    /**
+     * 根据设置的文本显示
+     *
+     * @param msg
+     */
+    public static void showMessage(final int msg) {
+        showMessage(msg, Toast.LENGTH_SHORT);
+    }
+
+    /**
+     * 显示一个文本并且设置时长
+     *
+     * @param msg
+     * @param len
+     */
+    public static void showMessage(final CharSequence msg, final int len) {
+        if (msg == null || msg.equals("")) {
+            return;
         }
-        mToast.setText(tip);
-        mToast.show();
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                synchronized (synObj) {
+                    // 加上同步是为了每个toast只要有机会显示出来
+                    if (toast != null) {
+                        toast.setText(msg);
+                        toast.setDuration(len);
+                    } else {
+                        toast = Toast.makeText(MyApplication.getInstance().getApplicationContext(), msg, len);
+                    }
+                    toast.show();
+                }
+            }
+        });
+    }
+
+    /**
+     * 资源文件方式显示文本
+     *
+     * @param msg
+     * @param len
+     */
+    public static void showMessage(final int msg, final int len) {
+        handler.post(new Runnable() {
+            @Override
+            public void run() {
+                synchronized (synObj) {
+                    if (toast != null) {
+                        toast.setText(msg);
+                        toast.setDuration(len);
+                    } else {
+                        toast = Toast.makeText(MyApplication.getInstance().getApplicationContext(), msg, len);
+                    }
+                    toast.show();
+                }
+            }
+        });
     }
 }

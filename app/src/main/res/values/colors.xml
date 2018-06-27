@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#452773</color>
-    <color name="colorPrimaryDark">#452773</color>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#FFFFFF</color>
     <color name="colorAccent">#FF4081</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
@@ -10,45 +10,18 @@
     <color name="textColor9">#999999</color>
     <color name="line">#eeeeee</color>
     <color name="textColorBlue">#169BD5</color>
+    <color name="color_3a3e3e">#3a3e3e</color>
 
-    <color name="CF2F2F2">#F2F2F2</color>
-    <color name="comBg">#f5f3f3</color>
-    <color name="red">#ff0000</color>
-
-    <color name="color_line">#8b7cac</color>
-    <color name="color_b3e6e6e6">#b3e6e6e6</color>
-    <color name="color_ebdedede">#ebdedede</color>
-    <color name="color_ebfcfcff">#ebfcfcff</color>
-    <color name="color_e6e6e6">#e6e6e6</color>
-    <color name="color_e6e3e3e3">#e6e3e3e3</color>
-    <color name="color_c4e7e7e7">#c4e7e7e7</color>
-    <color name="color_594088">#594088</color>
-    <color name="color_404040">#404040</color>
-    <color name="color_e1e1e3">#e1e1e3</color>
-    <color name="color_676767">#676767</color>
-    <color name="color_858080">#858080</color>
-    <color name="color_5f5f5f">#5f5f5f</color>
-    <color name="color_533d88">#533d88</color>
-    <color name="color_4f2e80">#4f2e80</color>
-    <color name="color_4c3281">#4c3281</color>
-    <color name="color_4e2b80">#4e2b80</color>
-    <color name="color_e9e9e9">#e9e9e9</color>
-    <color name="color_252828">#252828</color>
-    <color name="color_e6424242">#e6424242</color>
-    <color name="color_dddddd">#dddddd</color>
-    <color name="color_808080">#808080</color>
-    <color name="color_333737">#333737</color>
-    <color name="color_838c8c">#838c8c</color>
-    <color name="color_d8d8d8">#d8d8d8</color>
-    <color name="color_d6d6d6">#d6d6d6</color>
-    <color name="color_656565">#656565</color>
-
-
-
-    <color name="color_yanse0">#CCA7A3</color>
-    <color name="color_yanse1">#48C2C4</color>
-    <color name="color_yanse2">#3EB98B</color>
-    <color name="color_yanse3">#EE155A</color>
-    <color name="color_yanse4">#4E2D81</color>
+    <color name="tab_unselect">#a3a3a3</color>
+    <color name="themeColor">#c7000a</color>
+    <color name="divider">#e9e9e9</color>
+    <color name="c_bg_top">#2A69B6</color>
+    <color name="transparent">#00000000</color>
+    <color name="c_line">#E2E2E2</color>
+    <color name="c_f5f5f5">#f5f5f5</color>
+    <color name="c_626262">#626262</color>
+    <color name="bottom">#c7000a</color>
+    <color name="theme_textColor">#c7000a</color>
+    <color name="c7c7c7">#c7c7c7</color>
 
 </resources>

@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.os.Environment;
 
 import com.xunz.commonproject.center.model.User;
-import com.xunz.commonproject.common.component.ApplicationComponent;
 
 import java.io.File;
 
@@ -31,7 +30,6 @@ public class MyApplication  extends Application {
 
     public static String deviceId = "";
     public static String deviceVersion = "";
-    private ApplicationComponent mApplicationComponent;
     private static MyApplication sMyApp;
 
     @Override
@@ -56,9 +54,6 @@ public class MyApplication  extends Application {
         }
     }
 
-    public ApplicationComponent getApplicationComponent() {
-        return mApplicationComponent;
-    }
 
     public static MyApplication getInstance() {
         return sMyApp;

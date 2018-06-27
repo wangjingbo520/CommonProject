@@ -20,8 +20,6 @@
         <item name="android:windowBackground">@android:color/transparent</item>
     </style>
 
-
-
     <declare-styleable name="msv_SimpleMultiStateView">
         <attr name="msv_emptyView" format="reference"/>
         <attr name="msv_loadingView" format="reference"/>
@@ -36,6 +34,11 @@
             <enum name="nonet" value="10005"/>
         </attr>
     </declare-styleable>
+
+    <!--<style name="WelcomeStyle" parent="@android:style/Theme.NoTitleBar.Fullscreen">-->
+    <style name="WelcomeStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@mipmap/ic_launcher</item>
+    </style>
 
 
 

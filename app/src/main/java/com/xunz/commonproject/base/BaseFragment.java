@@ -45,11 +45,11 @@ public abstract class BaseFragment<T1 extends BaseContract.BasePresenter> extend
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        initInjector(MyApplication.getInstance().getApplicationComponent());
         attachView();
         bindView(view, savedInstanceState);
         initStateView();
     }
+
 
     @Override
     public View createView(LayoutInflater inflater, ViewGroup container, Bundle
@@ -58,6 +58,7 @@ public abstract class BaseFragment<T1 extends BaseContract.BasePresenter> extend
         unbinder = ButterKnife.bind(this, view);
         return view;
     }
+
 
 
     @Override
@@ -127,6 +128,13 @@ public abstract class BaseFragment<T1 extends BaseContract.BasePresenter> extend
         }
     }
 
+    @Override
+    public void showEmptyView() {
+        if (mSimpleMultiStateView != null) {
+            mSimpleMultiStateView.showEmptyView();
+        }
+    }
+
     protected void hideLoadingDialog() {
         if (mLoadingDialog != null && mLoadingDialog.isShowing()) {
             mLoadingDialog.dismiss();
@@ -168,6 +176,9 @@ public abstract class BaseFragment<T1 extends BaseContract.BasePresenter> extend
         }
         return true;
     }
+
+
+
     public String getUserId() {
         return AppData.getInstance().getUserId();
     }

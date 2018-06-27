@@ -4,24 +4,18 @@ import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.ColorInt;
 import android.support.annotation.IntRange;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.trello.rxlifecycle2.LifecycleTransformer;
-import com.xunz.commonproject.MyApplication;
 import com.xunz.commonproject.R;
 import com.xunz.commonproject.common.utils.DialogHelper;
 import com.xunz.commonproject.common.utils.StatusBarUtil;
 import com.xunz.commonproject.common.utils.ToastUtil;
 import com.xunz.commonproject.view.MultiStateView;
 import com.xunz.commonproject.view.SimpleMultiStateView;
-
-import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -35,18 +29,17 @@ import cn.bingoogolapple.swipebacklayout.BGASwipeBackHelper;
  * @date 2018/6/20
  * describe 这里能处理一些状态视图
  */
-public abstract class MyBaseActivity<T1 extends BaseContract.BasePresenter> extends BaseActivity
+public abstract class MyBaseActivity<T1 extends BaseContract.BasePresenter> extends BaseCameraActivity
         implements IBase, BaseContract.BaseView, BGASwipeBackHelper.Delegate {
     protected View mRootView;
     protected Dialog mLoadingDialog = null;
     Unbinder unbinder;
 
-    @Nullable
+
     @BindView(R.id.SimpleMultiStateView)
     SimpleMultiStateView mSimpleMultiStateView;
 
-    @Nullable
-    @Inject
+
     protected T1 mPresenter;
     protected BGASwipeBackHelper mSwipeBackHelper;
 
@@ -200,6 +193,7 @@ public abstract class MyBaseActivity<T1 extends BaseContract.BasePresenter> exte
         }
     }
 
+
     @Override
     public void showSuccess() {
         if (mSimpleMultiStateView != null) {
@@ -215,6 +209,13 @@ public abstract class MyBaseActivity<T1 extends BaseContract.BasePresenter> exte
     }
 
     @Override
+    public void showEmptyView() {
+        if (mSimpleMultiStateView!=null){
+            mSimpleMultiStateView.showEmptyView();
+        }
+    }
+
+    @Override
     public void showNoNet() {
         if (mSimpleMultiStateView != null) {
             mSimpleMultiStateView.showNoNetView();
@@ -222,7 +223,7 @@ public abstract class MyBaseActivity<T1 extends BaseContract.BasePresenter> exte
     }
 
     protected void T(String string) {
-        ToastUtil.show(string);
+        ToastUtil.showMessage(string);
     }
 
     @Override

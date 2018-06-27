@@ -7,7 +7,6 @@ import android.support.annotation.Nullable;
 import android.view.WindowManager;
 
 import com.xunz.commonproject.base.BaseActivity;
-import com.xunz.commonproject.center.view.RegisterActivity;
 import com.xunz.commonproject.test.TestActivity1;
 
 

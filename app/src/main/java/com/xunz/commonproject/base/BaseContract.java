@@ -32,6 +32,10 @@ public class BaseContract {
         void showSuccess();
 
         /**
+         * 没有数据的时候
+         */
+        void showEmptyView();
+        /**
          * 失败重试
          */
         void showFaild();
