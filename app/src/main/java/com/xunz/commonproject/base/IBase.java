@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.xunz.commonproject.dagger2.component.ApplicationComponent;
+
 
 /**
  * com.xunz.commonproject.base
@@ -43,7 +45,7 @@ public interface IBase {
      *
      * @param appComponent
      */
-   // void initInjector(ApplicationComponent appComponent);
+    void initInjector(ApplicationComponent appComponent);
 
     /**
      * 绑定布局,获取id等

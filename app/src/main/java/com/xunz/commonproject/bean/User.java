@@ -1,4 +1,4 @@
-package com.xunz.commonproject.center.model;
+package com.xunz.commonproject.bean;
 
 import java.io.Serializable;
 

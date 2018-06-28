@@ -9,7 +9,7 @@ import com.trello.rxlifecycle2.LifecycleTransformer;
  * @date 2018/6/11
  * describe
  */
-public class BaseContract {
+public interface BaseContract {
     interface BasePresenter<T extends BaseContract.BaseView> {
 
         void attachView(T view);

@@ -1,14 +1,12 @@
-package com.xunz.commonproject.fragment;
+package com.xunz.commonproject.ui.fragment;
 
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.xunz.commonproject.R;
 import com.xunz.commonproject.base.BaseFragment;
+import com.xunz.commonproject.dagger2.component.ApplicationComponent;
 
 /**
  * com.xunz.commonproject.fragment
@@ -36,6 +34,11 @@ public class UserFragment extends BaseFragment {
     }
 
     @Override
+    public void initInjector(ApplicationComponent appComponent) {
+
+    }
+
+    @Override
     public void bindView(View view, Bundle savedInstanceState) {
 
     }
@@ -48,6 +51,6 @@ public class UserFragment extends BaseFragment {
 
     @Override
     public void initData() {
-      showNoNet();
+        showNoNet();
     }
 }

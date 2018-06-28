@@ -1,5 +1,7 @@
 package com.xunz.commonproject.base;
 
+import android.content.Context;
+
 /**
  * com.xunz.commonproject.base
  *
@@ -11,6 +13,8 @@ public class BasePresenter<T extends BaseContract.BaseView> implements BaseContr
         .BasePresenter<T> {
 
     protected T mView;
+    protected Context mContext;
+
 
     @Override
     public void attachView(T view) {

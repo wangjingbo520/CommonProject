@@ -1,15 +1,14 @@
 package com.xunz.commonproject.common.api;
 
-import rx.functions.Func1;
+import io.reactivex.functions.Function;
 
-public class HttpResultFuc<T> implements Func1<HttpResult<T>,T> {
+public class HttpResultFuc<T> implements Function<HttpResult<T>, T> {
     @Override
-    public T call(HttpResult<T> httpResult) {
-        if(!"1".equals(httpResult.status)){
-
+    public T apply(HttpResult<T> tHttpResult) throws Exception {
+        if (!"1".equals(tHttpResult.status)) {
             //非正常返回结构处理
-            throw new ApiException(httpResult.status, httpResult.msg);
+            throw new ApiException(tHttpResult.status, tHttpResult.msg);
         }
-        return httpResult.data;
+        return tHttpResult.data;
     }
 }

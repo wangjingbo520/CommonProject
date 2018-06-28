@@ -2,7 +2,7 @@ package com.xunz.commonproject;
 
 import android.text.TextUtils;
 
-import com.xunz.commonproject.center.model.User;
+import com.xunz.commonproject.bean.User;
 import com.xunz.commonproject.common.constains.Constains;
 import com.xunz.commonproject.common.utils.Base64Helper;
 import com.xunz.commonproject.common.utils.Preferences;

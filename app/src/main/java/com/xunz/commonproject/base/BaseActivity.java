@@ -7,7 +7,7 @@ import android.support.annotation.Nullable;
 import android.widget.Toast;
 
 import com.xunz.commonproject.AppData;
-import com.xunz.commonproject.center.model.User;
+import com.xunz.commonproject.bean.User;
 
 /**
  * 作者: liangzixun

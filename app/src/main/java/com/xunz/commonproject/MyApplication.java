@@ -5,7 +5,11 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Environment;
 
-import com.xunz.commonproject.center.model.User;
+import com.xunz.commonproject.bean.User;
+import com.xunz.commonproject.dagger2.component.ApplicationComponent;
+import com.xunz.commonproject.dagger2.component.DaggerApplicationComponent;
+import com.xunz.commonproject.dagger2.module.ApplicationModule;
+import com.xunz.commonproject.dagger2.module.HttpModule;
 
 import java.io.File;
 
@@ -31,12 +35,18 @@ public class MyApplication  extends Application {
     public static String deviceId = "";
     public static String deviceVersion = "";
     private static MyApplication sMyApp;
+    private ApplicationComponent mApplicationComponent;
 
     @Override
     public void onCreate() {
         super.onCreate();
         sMyApp = this;
         initData();
+
+        mApplicationComponent = DaggerApplicationComponent.builder()
+                .applicationModule(new ApplicationModule(this))
+                .httpModule(new HttpModule())
+                .build();
     }
 
     private void initData() {
@@ -57,6 +67,10 @@ public class MyApplication  extends Application {
 
     public static MyApplication getInstance() {
         return sMyApp;
+    }
+
+    public ApplicationComponent getApplicationComponent() {
+        return mApplicationComponent;
     }
 }
 

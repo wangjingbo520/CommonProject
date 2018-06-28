@@ -7,8 +7,8 @@ import android.view.View;
 
 import com.xunz.commonproject.base.BaseActivity;
 import com.xunz.commonproject.common.utils.StatusBarUtil;
-import com.xunz.commonproject.fragment.HomeFragment;
-import com.xunz.commonproject.fragment.UserFragment;
+import com.xunz.commonproject.ui.fragment.HomeFragment;
+import com.xunz.commonproject.ui.fragment.UserFragment;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;

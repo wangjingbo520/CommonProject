@@ -10,9 +10,8 @@ import android.view.ViewGroup;
 
 import com.trello.rxlifecycle2.LifecycleTransformer;
 import com.xunz.commonproject.AppData;
-import com.xunz.commonproject.MyApplication;
 import com.xunz.commonproject.R;
-import com.xunz.commonproject.center.model.User;
+import com.xunz.commonproject.bean.User;
 import com.xunz.commonproject.common.utils.DialogHelper;
 import com.xunz.commonproject.view.MultiStateView;
 import com.xunz.commonproject.view.SimpleMultiStateView;

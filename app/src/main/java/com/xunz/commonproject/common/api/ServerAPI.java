@@ -1,40 +1,37 @@
 package com.xunz.commonproject.common.api;
 
 
+import com.xunz.commonproject.bean.User;
+
+import io.reactivex.Observable;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
-import rx.Observable;
 
 /**
- * 请求－接口
- * 作者：liuyuanqi on 17/7/17 11:45
- * 邮箱：liuyuanqi@eims.com.cn
+ * com.xunz.commonproject.net
+ *
+ * @author 王静波
+ * @date 2018/6/28
+ * describe
  */
 public interface ServerAPI {
 
     /**
-     * 获取手机验证码
-     *
-     * @param phone
-     * @param type
-     * @return
-     */
-    @POST("user/getValidateCode.do")
-    @FormUrlEncoded
-    Observable<HttpResult<String>> getValidateCode(@Field("phone") String phone, @Field("type") String type);
-
-    /**
      * 用户注册
      *
-     * @param mobile
+     * @param code
      * @param password
      * @param phone
      * @return
      */
     @POST("user/appRegister.do")
     @FormUrlEncoded
-    Observable<HttpResult<Object>> appRegister(@Field("code") String mobile, @Field("password") String password, @Field("phone") String phone);
+    Observable<HttpResult<User>> appRegister(
+            @Field("code") String code,
+            @Field("password") String password,
+            @Field("phone") String phone);
+
 
 
 }

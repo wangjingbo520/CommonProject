@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.trello.rxlifecycle2.LifecycleTransformer;
+import com.xunz.commonproject.MyApplication;
 import com.xunz.commonproject.R;
 import com.xunz.commonproject.common.utils.DialogHelper;
 import com.xunz.commonproject.common.utils.StatusBarUtil;
@@ -29,7 +30,8 @@ import cn.bingoogolapple.swipebacklayout.BGASwipeBackHelper;
  * @date 2018/6/20
  * describe 这里能处理一些状态视图
  */
-public abstract class MyBaseActivity<T1 extends BaseContract.BasePresenter> extends BaseCameraActivity
+public abstract class MyBaseActivity<T1 extends BaseContract.BasePresenter> extends
+        BaseCameraActivity
         implements IBase, BaseContract.BaseView, BGASwipeBackHelper.Delegate {
     protected View mRootView;
     protected Dialog mLoadingDialog = null;
@@ -52,7 +54,7 @@ public abstract class MyBaseActivity<T1 extends BaseContract.BasePresenter> exte
         mRootView = createView(null, null, savedInstanceState);
         setContentView(mRootView);
         //dogger2框架,解耦,后期可以实现,现在先不做处理.
-      //  initInjector(MyApplication.getInstance().getApplicationComponent());
+        initInjector(MyApplication.getInstance().getApplicationComponent());
         attachView();
         bindView(mRootView, savedInstanceState);
         //状态视图设置
@@ -210,7 +212,7 @@ public abstract class MyBaseActivity<T1 extends BaseContract.BasePresenter> exte
 
     @Override
     public void showEmptyView() {
-        if (mSimpleMultiStateView!=null){
+        if (mSimpleMultiStateView != null) {
             mSimpleMultiStateView.showEmptyView();
         }
     }

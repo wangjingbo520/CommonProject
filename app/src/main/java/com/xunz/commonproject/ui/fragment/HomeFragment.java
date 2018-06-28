@@ -1,19 +1,16 @@
-package com.xunz.commonproject.fragment;
+package com.xunz.commonproject.ui.fragment;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.footer.ClassicsFooter;
 import com.scwang.smartrefresh.layout.header.ClassicsHeader;
 import com.xunz.commonproject.R;
 import com.xunz.commonproject.base.BaseFragment;
+import com.xunz.commonproject.dagger2.component.ApplicationComponent;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
 /**
  * com.xunz.commonproject.fragment
@@ -41,6 +38,11 @@ public class HomeFragment extends BaseFragment {
     @Override
     public int getContentLayout() {
         return R.layout.fragment_home;
+
+    }
+
+    @Override
+    public void initInjector(ApplicationComponent appComponent) {
 
     }
 
