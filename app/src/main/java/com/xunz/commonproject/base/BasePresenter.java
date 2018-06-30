@@ -2,6 +2,8 @@ package com.xunz.commonproject.base;
 
 import android.content.Context;
 
+import com.xunz.commonproject.common.api.RequestClient;
+
 /**
  * com.xunz.commonproject.base
  *
@@ -14,6 +16,7 @@ public class BasePresenter<T extends BaseContract.BaseView> implements BaseContr
 
     protected T mView;
     protected Context mContext;
+    public RequestClient requestClient;
 
 
     @Override

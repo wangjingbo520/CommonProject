@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.ColorInt;
 import android.support.annotation.IntRange;
+import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,8 @@ import com.xunz.commonproject.common.utils.StatusBarUtil;
 import com.xunz.commonproject.common.utils.ToastUtil;
 import com.xunz.commonproject.view.MultiStateView;
 import com.xunz.commonproject.view.SimpleMultiStateView;
+
+import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -41,7 +44,8 @@ public abstract class MyBaseActivity<T1 extends BaseContract.BasePresenter> exte
     @BindView(R.id.SimpleMultiStateView)
     SimpleMultiStateView mSimpleMultiStateView;
 
-
+    @Nullable
+    @Inject
     protected T1 mPresenter;
     protected BGASwipeBackHelper mSwipeBackHelper;
 

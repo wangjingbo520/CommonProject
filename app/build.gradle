@@ -46,10 +46,9 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-
     implementation 'com.jakewharton:butterknife:8.8.1'
     implementation 'com.android.support:support-vector-drawable:26.1.0'
     implementation 'com.android.support:support-v4:26.1.0'
@@ -61,11 +60,11 @@ dependencies {
     implementation 'me.yokeyword:fragmentation:1.0.0'
     implementation 'cn.bingoogolapple:bga-swipebacklayout:1.1.0@aar'
 
+    //net
     implementation 'com.squareup.retrofit2:retrofit:2.1.0'
     implementation 'com.squareup.retrofit2:converter-scalars:2.1.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
-
     implementation 'com.github.VictorAlbertos.RxCache:runtime:1.8.0-2.x'
     implementation 'com.github.VictorAlbertos.Jolyglot:gson:0.0.3'
     implementation 'io.reactivex.rxjava2:rxjava:2.0.6'
@@ -73,12 +72,11 @@ dependencies {
     implementation 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
     implementation 'com.trello.rxlifecycle2:rxlifecycle:2.1.0'
     implementation 'com.trello.rxlifecycle2:rxlifecycle-components:2.1.0'
-
-
     implementation 'com.github.bumptech.glide:glide:3.7.0'
-    implementation 'com.android.support:design:26.+'//
-    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.4-4'
-
+    implementation 'com.android.support:design:26.+'
+    //dogger
     implementation 'com.google.dagger:dagger:2.7'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.7'
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.4-4'
+
 }

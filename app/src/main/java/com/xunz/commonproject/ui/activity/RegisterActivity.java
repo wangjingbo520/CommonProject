@@ -7,8 +7,8 @@ import com.xunz.commonproject.R;
 import com.xunz.commonproject.base.MyBaseActivity;
 import com.xunz.commonproject.bean.User;
 import com.xunz.commonproject.dagger2.component.ApplicationComponent;
-import com.xunz.commonproject.dagger2.component.DaggerHttpComponent;
 import com.xunz.commonproject.contract.RegisterContract;
+import com.xunz.commonproject.dagger2.component.DaggerHttpComponent;
 import com.xunz.commonproject.presenter.RegisterPresenter;
 
 public class RegisterActivity extends MyBaseActivity<RegisterPresenter> implements
@@ -27,10 +27,10 @@ public class RegisterActivity extends MyBaseActivity<RegisterPresenter> implemen
 
     @Override
     public void initInjector(ApplicationComponent appComponent) {
-        DaggerHttpComponent.builder()
-                .applicationComponent(appComponent)
-                .build()
-                .inject(this);
+//        DaggerHttpComponent.builder()
+//                .applicationComponent(appComponent)
+//                .build()
+//                .inject(this);
     }
 
     @Override

@@ -9,19 +9,14 @@ import com.xunz.commonproject.MainActivity;
 import com.xunz.commonproject.R;
 import com.xunz.commonproject.base.MyBaseActivity;
 import com.xunz.commonproject.dagger2.component.ApplicationComponent;
+import com.xunz.commonproject.ui.activity.LoginActivity;
+import com.xunz.commonproject.ui.activity.RegisterActivity;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class TestActivity1 extends MyBaseActivity {
-
-
-    @BindView(R.id.button4)
-    Button button4;
-    @BindView(R.id.textView)
-    TextView textView;
-    @BindView(R.id.textView2)
-    TextView textView2;
 
     @Override
     public void onRetry() {
@@ -42,7 +37,6 @@ public class TestActivity1 extends MyBaseActivity {
     @Override
     public void bindView(View view, Bundle savedInstanceState) {
         setTitle("首页");
-
     }
 
     @Override
@@ -51,9 +45,21 @@ public class TestActivity1 extends MyBaseActivity {
     }
 
 
-    @OnClick(R.id.button4)
-    public void onViewClicked() {
-        startTo(MainActivity.class);
-
+    @OnClick({R.id.tvMain, R.id.tvLogin, R.id.tvRegister})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.tvMain:
+                startTo(MainActivity.class);
+                break;
+            case R.id.tvLogin:
+                startTo(LoginActivity.class);
+                break;
+            case R.id.tvRegister:
+                startTo(RegisterActivity.class);
+                break;
+            default:
+                break;
+        }
     }
+
 }

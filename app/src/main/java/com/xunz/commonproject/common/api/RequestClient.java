@@ -1,7 +1,9 @@
 package com.xunz.commonproject.common.api;
 
 
+import com.xunz.commonproject.MyApplication;
 import com.xunz.commonproject.bean.User;
+import com.xunz.commonproject.common.utils.DeviceUtils;
 
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -32,6 +34,21 @@ public class RequestClient {
     public Observable<User> appRegister(String code, String password, String phone) {
         return serverAPI.appRegister(code, password, phone)
                 .map((new HttpResultFuc<User>()))
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+
+    /**
+     * 用户登录
+     *
+     * @param mobile     用户名
+     * @param password   密码
+     * @param is_company 个人企业标识 0个人用户 1企业用户 9放款人
+     * @return
+     */
+    public Observable<User> login(String mobile, String password, int is_company) {
+        return serverAPI.loginOPT101("101", mobile, password, is_company, 2)
+                .map(new HttpResultFuc<User>())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }

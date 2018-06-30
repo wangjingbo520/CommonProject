@@ -2,22 +2,23 @@ package com.xunz.commonproject.contract;
 
 import com.xunz.commonproject.base.BaseContract;
 import com.xunz.commonproject.bean.User;
+import com.xunz.commonproject.presenter.LoginPresenter;
 
 /**
- * com.xunz.commonproject.ui.contract
+ * com.xunz.commonproject.contract
  *
  * @author 王静波
- * @date 2018/6/28
+ * @date 2018/6/30
  * describe
  */
-public interface RegisterContract {
+public interface LoginContract {
     interface View extends BaseContract.BaseView {
         /**
-         * 注册成功回调
+         * 登录
          *
-         * @param user
+         * @param
          */
-        void getData(User user);
+        void getData(Object object);
     }
 
     interface Presenter extends BaseContract.BasePresenter<View> {
@@ -26,10 +27,7 @@ public interface RegisterContract {
          *
          * @param phone
          * @param password
-         * @param code
          */
-        void postRegisterInfo(String code, String phone, String password);
+        void login(String phone, String password, int is_company);
     }
-
-
 }

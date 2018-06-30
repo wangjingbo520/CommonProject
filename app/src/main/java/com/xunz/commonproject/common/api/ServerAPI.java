@@ -33,5 +33,19 @@ public interface ServerAPI {
             @Field("phone") String phone);
 
 
+    /**
+     * 登录
+     *
+     * @return
+     */
+    @POST("services")
+    @FormUrlEncoded
+    Observable<HttpResult<User>> loginOPT101(
+            @Field("OPT") String OPT,
+            @Field("mobile") String mobile,
+            @Field("password") String password,
+            @Field("is_company") int is_company,
+            @Field("type") int type);
+
 
 }

@@ -24,7 +24,7 @@ public class ImageManager {
      * @param imageView
      */
     public static void Load(String imgUrl, ImageView imageView) {
-        Glide.with(MyApplication.context).load(imgUrl).error(IMAGE_DEFAULT).into(imageView);
+      //  Glide.with(MyApplication.context).load(imgUrl).error(IMAGE_DEFAULT).into(imageView);
     }
 
 }

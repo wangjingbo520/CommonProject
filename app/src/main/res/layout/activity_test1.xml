@@ -9,40 +9,31 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <RelativeLayout
-
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/tvMain"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="主页" />
 
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="168dp"
-                android:text="Button" />
-
-            <TextView
-                android:id="@+id/textView"
+            <Button
+                android:id="@+id/tvLogin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
+                android:text="登录" />
 
-                android:layout_marginBottom="238dp"
-                android:text="TextView" />
-
-            <TextView
-                android:id="@+id/textView2"
+            <Button
+                android:id="@+id/tvRegister"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="261dp"
-                android:text="TextView" />
-        </RelativeLayout>
-
+                android:text="注册" />
+        </LinearLayout>
 
     </com.xunz.commonproject.view.SimpleMultiStateView>
-
 
 </FrameLayout>

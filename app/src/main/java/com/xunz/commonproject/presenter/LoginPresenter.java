@@ -3,31 +3,30 @@ package com.xunz.commonproject.presenter;
 import com.xunz.commonproject.base.BasePresenter;
 import com.xunz.commonproject.bean.User;
 import com.xunz.commonproject.common.api.RequestClient;
-import com.xunz.commonproject.contract.RegisterContract;
+import com.xunz.commonproject.contract.LoginContract;
 
 import javax.inject.Inject;
 
 import io.reactivex.observers.DisposableObserver;
 
 /**
- * com.xunz.commonproject.ui.presenter
+ * com.xunz.commonproject.presenter
  *
  * @author 王静波
- * @date 2018/6/28
+ * @date 2018/6/30
  * describe
  */
-public class RegisterPresenter extends BasePresenter<RegisterContract.View> implements
-        RegisterContract.Presenter {
+public class LoginPresenter extends BasePresenter<LoginContract.View> implements
+        LoginContract.Presenter {
 
     @Inject
-    public RegisterPresenter(RequestClient requestClient) {
+    public LoginPresenter(RequestClient requestClient) {
         this.requestClient = requestClient;
     }
 
-
     @Override
-    public void postRegisterInfo(String code, String phone, String password) {
-        requestClient.appRegister(code, phone, password)
+    public void login(String phone, String password, int is_company) {
+        requestClient.login(phone, password, is_company)
                 .compose(mView.<User>bindToLife())
                 .subscribe(new DisposableObserver<User>() {
                     @Override
@@ -51,7 +50,7 @@ public class RegisterPresenter extends BasePresenter<RegisterContract.View> impl
                         super.onStart();
                     }
                 });
+
+
     }
-
-
 }
