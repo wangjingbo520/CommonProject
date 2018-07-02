@@ -11,6 +11,7 @@ import com.xunz.commonproject.base.MyBaseActivity;
 import com.xunz.commonproject.common.utils.MD5Helper;
 import com.xunz.commonproject.contract.LoginContract;
 import com.xunz.commonproject.dagger2.component.ApplicationComponent;
+import com.xunz.commonproject.dagger2.component.DaggerHttpComponent;
 import com.xunz.commonproject.presenter.LoginPresenter;
 
 import butterknife.BindView;
@@ -42,10 +43,10 @@ public class LoginActivity extends MyBaseActivity<LoginPresenter> implements Log
 
     @Override
     public void initInjector(ApplicationComponent appComponent) {
-//        DaggerHttpComponent.builder()
-//                .applicationComponent(appComponent)
-//                .build()
-//                .inject(this);
+        DaggerHttpComponent.builder()
+                .applicationComponent(appComponent)
+                .build()
+                .inject(this);
 
     }
 

@@ -7,9 +7,6 @@ import android.os.Environment;
 
 import com.xunz.commonproject.bean.User;
 import com.xunz.commonproject.dagger2.component.ApplicationComponent;
-import com.xunz.commonproject.dagger2.component.DaggerApplicationComponent;
-import com.xunz.commonproject.dagger2.module.ApplicationModule;
-import com.xunz.commonproject.dagger2.module.HttpModule;
 
 import java.io.File;
 
@@ -43,10 +40,10 @@ public class MyApplication  extends Application {
         sMyApp = this;
         initData();
 
-        mApplicationComponent = DaggerApplicationComponent.builder()
-                .applicationModule(new ApplicationModule(this))
-                .httpModule(new HttpModule())
-                .build();
+//        mApplicationComponent = DaggerApplicationComponent.builder()
+//                .applicationModule(new ApplicationModule(this))
+//                .httpModule(new HttpModule())
+//                .build();
     }
 
     private void initData() {

@@ -1,9 +1,7 @@
 package com.xunz.commonproject.common.api;
 
 
-import com.xunz.commonproject.MyApplication;
 import com.xunz.commonproject.bean.User;
-import com.xunz.commonproject.common.utils.DeviceUtils;
 
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;

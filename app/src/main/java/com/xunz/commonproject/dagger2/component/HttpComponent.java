@@ -20,8 +20,8 @@ public interface HttpComponent {
      *
      * @param registerActivity
      */
-  //   void inject(RegisterActivity registerActivity);
-//
-//    void inject(LoginActivity loginActivity);
+    void inject(RegisterActivity registerActivity);
+
+    void inject(LoginActivity loginActivity);
 
 }

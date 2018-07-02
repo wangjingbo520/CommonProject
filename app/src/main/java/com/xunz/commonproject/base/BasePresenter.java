@@ -15,9 +15,6 @@ public class BasePresenter<T extends BaseContract.BaseView> implements BaseContr
         .BasePresenter<T> {
 
     protected T mView;
-    protected Context mContext;
-    public RequestClient requestClient;
-
 
     @Override
     public void attachView(T view) {

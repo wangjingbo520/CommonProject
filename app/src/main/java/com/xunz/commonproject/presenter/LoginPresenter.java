@@ -18,6 +18,7 @@ import io.reactivex.observers.DisposableObserver;
  */
 public class LoginPresenter extends BasePresenter<LoginContract.View> implements
         LoginContract.Presenter {
+    public RequestClient requestClient;
 
     @Inject
     public LoginPresenter(RequestClient requestClient) {

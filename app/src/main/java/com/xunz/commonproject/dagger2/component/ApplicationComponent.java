@@ -2,8 +2,8 @@ package com.xunz.commonproject.dagger2.component;
 
 import android.content.Context;
 
-
 import com.xunz.commonproject.MyApplication;
+import com.xunz.commonproject.common.api.RequestClient;
 import com.xunz.commonproject.dagger2.module.ApplicationModule;
 import com.xunz.commonproject.dagger2.module.HttpModule;
 
@@ -19,5 +19,7 @@ public interface ApplicationComponent {
     MyApplication getApplication();
 
     Context getContext();
+
+    RequestClient getNetEaseApi();
 
 }

@@ -19,6 +19,8 @@ import io.reactivex.observers.DisposableObserver;
 public class RegisterPresenter extends BasePresenter<RegisterContract.View> implements
         RegisterContract.Presenter {
 
+    RequestClient requestClient;
+
     @Inject
     public RegisterPresenter(RequestClient requestClient) {
         this.requestClient = requestClient;
