@@ -16,6 +16,8 @@ import com.xunz.commonproject.common.utils.DialogHelper;
 import com.xunz.commonproject.view.MultiStateView;
 import com.xunz.commonproject.view.SimpleMultiStateView;
 
+import javax.inject.Inject;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -35,6 +37,8 @@ public abstract class BaseFragment<T1 extends BaseContract.BasePresenter> extend
     protected Dialog mLoadingDialog = null;
     Unbinder unbinder;
 
+    @Nullable
+    @Inject
     protected T1 mPresenter;
 
     @BindView(R.id.SimpleMultiStateView)
@@ -57,7 +61,6 @@ public abstract class BaseFragment<T1 extends BaseContract.BasePresenter> extend
         unbinder = ButterKnife.bind(this, view);
         return view;
     }
-
 
 
     @Override

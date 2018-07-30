@@ -34,7 +34,7 @@ import cn.bingoogolapple.swipebacklayout.BGASwipeBackHelper;
  * describe 这里能处理一些状态视图
  */
 public abstract class MyBaseActivity<T1 extends BaseContract.BasePresenter> extends
-        BaseCameraActivity
+        BaseActivity
         implements IBase, BaseContract.BaseView, BGASwipeBackHelper.Delegate {
     protected View mRootView;
     protected Dialog mLoadingDialog = null;
@@ -67,7 +67,6 @@ public abstract class MyBaseActivity<T1 extends BaseContract.BasePresenter> exte
         initData();
         mLoadingDialog = DialogHelper.getLoadingDialog(this);
     }
-
 
     @Override
     public View createView(LayoutInflater inflater, ViewGroup container, Bundle

@@ -23,7 +23,6 @@ import butterknife.OnClick;
  */
 public class LoginActivity extends MyBaseActivity<LoginPresenter> implements LoginContract.View {
 
-
     @BindView(R.id.tvAccount)
     AutoCompleteTextView tvAccount;
     @BindView(R.id.tvPassword)

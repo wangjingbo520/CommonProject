@@ -14,7 +14,6 @@ import com.xunz.commonproject.presenter.RegisterPresenter;
 public class RegisterActivity extends MyBaseActivity<RegisterPresenter> implements
         RegisterContract.View {
 
-
     @Override
     public void onRetry() {
 
@@ -41,7 +40,6 @@ public class RegisterActivity extends MyBaseActivity<RegisterPresenter> implemen
     @Override
     public void initData() {
         mPresenter.postRegisterInfo("", "", "");
-
     }
 
 
