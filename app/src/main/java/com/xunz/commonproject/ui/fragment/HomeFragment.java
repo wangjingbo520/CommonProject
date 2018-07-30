@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.xunz.commonproject.R;
 import com.xunz.commonproject.base.BaseFragment;
+import com.xunz.commonproject.bean.User;
 import com.xunz.commonproject.common.utils.MD5Helper;
 import com.xunz.commonproject.common.utils.ToastUtil;
 import com.xunz.commonproject.contract.LoginContract;
@@ -20,9 +21,7 @@ import butterknife.OnClick;
 import in.srain.cube.views.ptr.PtrFrameLayout;
 
 /**
- * com.xunz.commonproject.fragment
- *
- * @author 王静波
+ * @author wangjingbo
  * @date 2018/6/27
  * describe
  */
@@ -86,11 +85,12 @@ public class HomeFragment extends BaseFragment<LoginPresenter> implements LoginC
             ToastUtil.showMessage("mPresenter==null");
             return;
         }
-        mPresenter.login("liunian", MD5Helper.encrypt32WithKey("123456"), 0);
+        mPresenter.login("15575163734", "123456");
     }
 
+
     @Override
-    public void getData(Object object) {
+    public void onSuccess(User user) {
 
     }
 }

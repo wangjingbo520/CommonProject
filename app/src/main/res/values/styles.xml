@@ -7,10 +7,12 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <!--<item name="colorAccent">@color/colorAccent</item>-->
     </style>
+
     <style name="pop_bot_style" parent="android:Animation">
         <item name="android:windowEnterAnimation">@anim/pop_enter_bot_anim</item>
         <item name="android:windowExitAnimation">@anim/pop_exit_bot_anim</item>
     </style>
+
     <style name="dialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>
         <item name="android:windowIsFloating">true</item>
@@ -21,17 +23,17 @@
     </style>
 
     <declare-styleable name="msv_SimpleMultiStateView">
-        <attr name="msv_emptyView" format="reference"/>
-        <attr name="msv_loadingView" format="reference"/>
-        <attr name="msv_failView" format="reference"/>
-        <attr name="msv_contentView" format="reference"/>
-        <attr name="msv_nonetView" format="reference"/>
+        <attr name="msv_emptyView" format="reference" />
+        <attr name="msv_loadingView" format="reference" />
+        <attr name="msv_failView" format="reference" />
+        <attr name="msv_contentView" format="reference" />
+        <attr name="msv_nonetView" format="reference" />
         <attr name="msv_viewState" format="enum">
-            <enum name="content" value="10001"/>
-            <enum name="loading" value="10002"/>
-            <enum name="empty" value="10003"/>
-            <enum name="fail" value="10004"/>
-            <enum name="nonet" value="10005"/>
+            <enum name="content" value="10001" />
+            <enum name="loading" value="10002" />
+            <enum name="empty" value="10003" />
+            <enum name="fail" value="10004" />
+            <enum name="nonet" value="10005" />
         </attr>
     </declare-styleable>
 
@@ -40,6 +42,9 @@
         <item name="android:windowBackground">@mipmap/ic_launcher</item>
     </style>
 
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 
 </resources>

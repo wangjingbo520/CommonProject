@@ -18,7 +18,7 @@ import cn.bingoogolapple.swipebacklayout.BGASwipeBackManager;
 /**
  * com.xunz.commonproject.base
  *
- * @author 王静波
+ * @author wangjingbo
  * @date 2018/6/20
  * describe
  */

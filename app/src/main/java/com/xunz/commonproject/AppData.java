@@ -17,6 +17,7 @@ public class AppData {
 
     private AppData() {
     }
+
     public static AppData getInstance() {
         if (null == appData) {
             synchronized (AppData.class) {
@@ -37,14 +38,13 @@ public class AppData {
 
     public void setUser(User user) {
 
-        if(null != user) {
+        if (null != user) {
             //将user保存到本地
             String userBase64 = Base64Helper.encode(user);
             Preferences.putString(Constains.USER, userBase64);
             this.user = user;
         }
     }
-
 
     /**
      * 退出登录
@@ -71,8 +71,8 @@ public class AppData {
         String userBase64 = Preferences.getString(Constains.USER);
         if (!TextUtils.isEmpty(userBase64)) {
             Object object = Base64Helper.decode(userBase64);
-            User temp = (null != object ? (User)object : null);
-            if (null != temp && !TextUtils.isEmpty(temp.userId)) {
+            User temp = (null != object ? (User) object : null);
+            if (null != temp && !TextUtils.isEmpty(temp.getUserId() + "")) {
 
                 //登录成功
                 user = temp;
@@ -83,19 +83,12 @@ public class AppData {
 
     public boolean isLogin() {
         //判断缓存用户是否存在
-        if (null != user && !TextUtils.isEmpty(user.userId)) {
+        if (null != user && !TextUtils.isEmpty(user.getUserId() + "")) {
             return true;
         }
         return false;
     }
 
-    public boolean isBindEmail() {
-        //判断缓存用户是否存在
-        if (null != user && !TextUtils.isEmpty(user.email)) {
-            return true;
-        }
-        return false;
-    }
 
     /**
      * 返回用户id
@@ -105,7 +98,7 @@ public class AppData {
     public String getUserId() {
         User user = getUser();
         if (null != user) {
-            return user.userId;
+            return user.getUserId() + "";
         }
         return "";
     }

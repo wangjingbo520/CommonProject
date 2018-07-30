@@ -10,9 +10,7 @@ import com.xunz.commonproject.AppData;
 import com.xunz.commonproject.bean.User;
 
 /**
- * 作者: liangzixun
  * 时间: 2017/9/5 16:28
- * 邮箱: liangzixun@eims.com.cn
  */
 public class BaseActivity extends SupportActivity {
     public Context mContext;
@@ -20,14 +18,14 @@ public class BaseActivity extends SupportActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mContext=this;
+        mContext = this;
     }
 
-    public void showToast(String msg){
+    public void showToast(String msg) {
         Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
     }
 
-    public void startTo(Class c){
+    public void startTo(Class c) {
         startActivity(new Intent(this, c));
     }
 
@@ -37,8 +35,8 @@ public class BaseActivity extends SupportActivity {
 
     public boolean userIsLogin(boolean startToLogin) {
         User user = AppData.getInstance().getUser();
-        if(null == user){
-            if(startToLogin){
+        if (null == user) {
+            if (startToLogin) {
 //                startTo(LoginActivity.class);
             }
             return false;

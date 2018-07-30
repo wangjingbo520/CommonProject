@@ -9,9 +9,7 @@ import com.xunz.commonproject.base.BaseFragment;
 import com.xunz.commonproject.dagger2.component.ApplicationComponent;
 
 /**
- * com.xunz.commonproject.fragment
- *
- * @author 王静波
+ * @author wangjingbo
  * @date 2018/6/27
  * describe
  */

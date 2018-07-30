@@ -14,9 +14,8 @@ import me.yokeyword.fragmentation.SupportHelper;
 import me.yokeyword.fragmentation.anim.FragmentAnimator;
 
 /**
- * com.xunz.commonproject.base
  *
- * @author 王静波
+ * @author wangjingbo
  * @date 2018/6/20
  * describe
  */

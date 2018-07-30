@@ -8,33 +8,60 @@ import java.io.Serializable;
  * 邮箱: liangzixun@eims.com.cn
  */
 public class User implements Serializable {
-    public String lastLoginIp;
-    public String deviceId;
-    public String lastLoginTime;
-    public String loginPassword;
-    public int isAcceptPush;
-    public int isSetInfo;
+
+    /**
+     * expirationTime :
+     * userId : 8
+     * userName : 45678
+     * openingTime :
+     * mobile : 18219022852
+     */
+
+    private String expirationTime;
+    private long userId;
+    private String userName;
+    private String openingTime;
+    private long mobile;
 
 
-    public String userId;
-    public String birthday;
-    public String smokingYear;
-    public int isDiabetes;
-    public String phone;
-    public int weight;
-    public String glycosylatedBlood;
-    public String waist;//腰围
-    public int diabetesYear;
-    public int isHypertension;
-    public int diabetesRelatives;
-    public int height;
-    public int isSetProject;
-    public String email;
-    public String nickName;
-    public int age;
-    public int gender;
-    public int habitHand;
-    public String img;
+    public String getExpirationTime() {
+        return expirationTime;
+    }
 
+    public void setExpirationTime(String expirationTime) {
+        this.expirationTime = expirationTime;
+    }
+
+    public long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(long userId) {
+        this.userId = userId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getOpeningTime() {
+        return openingTime;
+    }
+
+    public void setOpeningTime(String openingTime) {
+        this.openingTime = openingTime;
+    }
+
+    public long getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(long mobile) {
+        this.mobile = mobile;
+    }
 
 }

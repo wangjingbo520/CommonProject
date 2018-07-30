@@ -16,7 +16,7 @@ import butterknife.OnClick;
 /**
  * com.xunz.commonproject
  *
- * @author 王静波
+ * @author wangjingbo
  * @date 2018/6/27
  * describe
  */
@@ -34,7 +34,6 @@ public class MainActivity extends BaseActivity {
         ButterKnife.bind(this);
         initFragment(0);
     }
-
 
     private void initFragment(int index) {
         FragmentManager fragmentManager = getSupportFragmentManager();

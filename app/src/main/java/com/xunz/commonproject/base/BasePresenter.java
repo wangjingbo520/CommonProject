@@ -1,13 +1,8 @@
 package com.xunz.commonproject.base;
 
-import android.content.Context;
-
-import com.xunz.commonproject.common.api.RequestClient;
-
 /**
- * com.xunz.commonproject.base
  *
- * @author 王静波
+ * @author wangjingbo
  * @date 2018/6/11
  * describe
  */

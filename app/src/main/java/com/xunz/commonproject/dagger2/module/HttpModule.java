@@ -50,7 +50,7 @@ public class HttpModule {
                 .client(builder.build());
 
         return RequestClient.getInstance(retrofitBuilder
-                .baseUrl(URLs.ServerUrl)
+                .baseUrl(URLs.SERVERURL)
                 .build().create(ServerAPI.class));
     }
 

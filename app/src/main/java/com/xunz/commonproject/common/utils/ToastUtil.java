@@ -9,7 +9,7 @@ import com.xunz.commonproject.MyApplication;
 /**
  * com.xunz.commonproject.common.utils
  *
- * @author 王静波
+ * @author wangjingbo
  * @date 2018/6/27
  * describe
  */

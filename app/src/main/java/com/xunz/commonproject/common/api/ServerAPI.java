@@ -11,7 +11,7 @@ import retrofit2.http.POST;
 /**
  * com.xunz.commonproject.net
  *
- * @author 王静波
+ * @author wangjingbo
  * @date 2018/6/28
  * describe
  */
@@ -36,16 +36,14 @@ public interface ServerAPI {
     /**
      * 登录
      *
+     * @param userName
+     * @param pwd
      * @return
      */
-    @POST("services")
+    @POST("login")
     @FormUrlEncoded
-    Observable<HttpResult<User>> loginOPT101(
-            @Field("OPT") String OPT,
-            @Field("mobile") String mobile,
-            @Field("password") String password,
-            @Field("is_company") int is_company,
-            @Field("type") int type);
+    Observable<HttpResult<User>> login(@Field("userName") String userName,
+                                       @Field("pwd") String pwd);
 
 
 }

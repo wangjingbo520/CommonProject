@@ -3,9 +3,8 @@ package com.xunz.commonproject.base;
 import com.trello.rxlifecycle2.LifecycleTransformer;
 
 /**
- * com.xunz.commonproject.base
  *
- * @author 王静波
+ * @author wangjingbo
  * @date 2018/6/11
  * describe
  */

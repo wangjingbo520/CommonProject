@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 
 import com.trello.rxlifecycle2.LifecycleTransformer;
 import com.xunz.commonproject.AppData;
+import com.xunz.commonproject.MyApplication;
 import com.xunz.commonproject.R;
 import com.xunz.commonproject.bean.User;
 import com.xunz.commonproject.common.utils.DialogHelper;
@@ -25,7 +26,7 @@ import butterknife.Unbinder;
 /**
  * com.xunz.commonproject.base
  *
- * @author 王静波
+ * @author wangjingbo
  * @date 2018/6/11
  * describe
  */
@@ -44,15 +45,19 @@ public abstract class BaseFragment<T1 extends BaseContract.BasePresenter> extend
     @BindView(R.id.SimpleMultiStateView)
     SimpleMultiStateView mSimpleMultiStateView;
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        initInjector(MyApplication.getInstance().getApplicationComponent());
         attachView();
         bindView(view, savedInstanceState);
         initStateView();
     }
-
 
     @Override
     public View createView(LayoutInflater inflater, ViewGroup container, Bundle
@@ -61,7 +66,6 @@ public abstract class BaseFragment<T1 extends BaseContract.BasePresenter> extend
         unbinder = ButterKnife.bind(this, view);
         return view;
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle
@@ -170,8 +174,8 @@ public abstract class BaseFragment<T1 extends BaseContract.BasePresenter> extend
 
     public boolean userIsLogin(boolean startToLogin) {
         User user = AppData.getInstance().getUser();
-        if(null == user){
-            if(startToLogin){
+        if (null == user) {
+            if (startToLogin) {
 //                startTo(LoginActivity.class);
             }
             return false;
@@ -191,6 +195,7 @@ public abstract class BaseFragment<T1 extends BaseContract.BasePresenter> extend
     public String getUserId() {
         return AppData.getInstance().getUserId();
     }
+
     public User getUser() {
         return AppData.getInstance().getUser();
     }

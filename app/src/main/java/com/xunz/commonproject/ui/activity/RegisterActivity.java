@@ -11,6 +11,11 @@ import com.xunz.commonproject.dagger2.component.ApplicationComponent;
 import com.xunz.commonproject.dagger2.component.DaggerHttpComponent;
 import com.xunz.commonproject.presenter.RegisterPresenter;
 
+/**
+ * @author Wangjingbo
+ * @date 2018/7/30
+ * describe 注册
+ */
 public class RegisterActivity extends MyBaseActivity<RegisterPresenter> implements
         RegisterContract.View {
 

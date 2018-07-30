@@ -9,7 +9,7 @@ import android.text.TextUtils;
 /**
  * com.xunz.commonproject.net
  *
- * @author 王静波
+ * @author wangjingbo
  * @date 2018/6/28
  * describe
  */

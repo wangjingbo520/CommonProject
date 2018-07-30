@@ -9,10 +9,10 @@ package com.xunz.commonproject.common.api;
  */
 public class URLs {
 
-    //测试环境,马上银测试
-    public static final String ServerUrl = "http://d5.cto.shovesoft.com/app/";
-    public static final String FileUploadUrl = "http://d2.java.shovesoft" +
-            ".com/st_upload/file_upload/";
+    /**
+     * 测试环境
+     */
+    public static final String SERVERURL = "http://d5.cto.shovesoft.com/org.eims.XYBaby.web/";
 
 }
 

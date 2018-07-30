@@ -27,11 +27,9 @@ import butterknife.Unbinder;
 import cn.bingoogolapple.swipebacklayout.BGASwipeBackHelper;
 
 /**
- * com.xunz.commonproject.base
- *
- * @author 王静波
+ * @author wangjingbo
  * @date 2018/6/20
- * describe 这里能处理一些状态视图
+ * describe 这里能处理一些状态视图,引入dogger
  */
 public abstract class MyBaseActivity<T1 extends BaseContract.BasePresenter> extends
         BaseActivity
@@ -57,13 +55,10 @@ public abstract class MyBaseActivity<T1 extends BaseContract.BasePresenter> exte
         super.onCreate(savedInstanceState);
         mRootView = createView(null, null, savedInstanceState);
         setContentView(mRootView);
-        //dogger2框架,解耦,后期可以实现,现在先不做处理.
         initInjector(MyApplication.getInstance().getApplicationComponent());
         attachView();
         bindView(mRootView, savedInstanceState);
-        //状态视图设置
         initStateView();
-        //初始化数据
         initData();
         mLoadingDialog = DialogHelper.getLoadingDialog(this);
     }

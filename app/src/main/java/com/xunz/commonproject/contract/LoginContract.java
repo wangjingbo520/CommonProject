@@ -7,27 +7,17 @@ import com.xunz.commonproject.presenter.LoginPresenter;
 /**
  * com.xunz.commonproject.contract
  *
- * @author 王静波
+ * @author wangjingbo
  * @date 2018/6/30
  * describe
  */
 public interface LoginContract {
+
     interface View extends BaseContract.BaseView {
-        /**
-         * 登录
-         *
-         * @param
-         */
-        void getData(Object object);
+        void onSuccess(User user);
     }
 
     interface Presenter extends BaseContract.BasePresenter<View> {
-        /**
-         * 提交注册信息
-         *
-         * @param phone
-         * @param password
-         */
-        void login(String phone, String password, int is_company);
+        void login(String userName, String pwd);
     }
 }
