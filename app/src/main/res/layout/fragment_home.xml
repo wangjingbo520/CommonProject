@@ -5,20 +5,26 @@
     android:layout_height="match_parent"
     tools:context=".ui.fragment.HomeFragment">
 
-    <com.xunz.commonproject.view.SimpleMultiStateView
-        android:id="@+id/SimpleMultiStateView"
+    <in.srain.cube.views.ptr.PtrClassicFrameLayout
+        android:id="@+id/mPtrFrameLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true">
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="login" />
+        <com.xunz.commonproject.view.SimpleMultiStateView
+            android:id="@+id/SimpleMultiStateView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="login" />
 
-    </com.xunz.commonproject.view.SimpleMultiStateView>
+        </com.xunz.commonproject.view.SimpleMultiStateView>
 
+    </in.srain.cube.views.ptr.PtrClassicFrameLayout>
 
 </FrameLayout>

@@ -1,6 +1,7 @@
 package com.xunz.commonproject.ui.fragment;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 
 import com.xunz.commonproject.R;
@@ -9,10 +10,14 @@ import com.xunz.commonproject.common.utils.MD5Helper;
 import com.xunz.commonproject.common.utils.ToastUtil;
 import com.xunz.commonproject.contract.LoginContract;
 import com.xunz.commonproject.dagger2.component.ApplicationComponent;
+import com.xunz.commonproject.dagger2.component.DaggerApplicationComponent;
 import com.xunz.commonproject.dagger2.component.DaggerHttpComponent;
+import com.xunz.commonproject.dagger2.module.ApplicationModule;
 import com.xunz.commonproject.presenter.LoginPresenter;
 
+import butterknife.BindView;
 import butterknife.OnClick;
+import in.srain.cube.views.ptr.PtrFrameLayout;
 
 /**
  * com.xunz.commonproject.fragment
@@ -25,6 +30,8 @@ public class HomeFragment extends BaseFragment<LoginPresenter> implements LoginC
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
+    @BindView(R.id.mPtrFrameLayout)
+    PtrFrameLayout mPtrFrameLayout;
 
     public static HomeFragment newInstance(String param1, String param2) {
         HomeFragment fragment = new HomeFragment();
@@ -47,11 +54,22 @@ public class HomeFragment extends BaseFragment<LoginPresenter> implements LoginC
                 .applicationComponent(appComponent)
                 .build()
                 .inject(this);
-
     }
 
     @Override
     public void bindView(View view, Bundle savedInstanceState) {
+        mPtrFrameLayout.disableWhenHorizontalMove(true);
+    }
+
+    @Override
+    public void onRetry() {
+        super.onRetry();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                showSuccess();
+            }
+        }, 2000);
     }
 
     @Override

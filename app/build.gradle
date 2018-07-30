@@ -1,13 +1,23 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+
     defaultConfig {
-        applicationId "com.xunz.commonproject"
-        minSdkVersion 15
-        targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
+        applicationId rootProject.ext.android.applicationId
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
     }
 
     signingConfigs {
@@ -29,54 +39,45 @@ android {
             signingConfig signingConfigs.commonConfig
         }
     }
-
-    defaultConfig {
-        ndk {
-            // 设置支持的SO库架构
-            abiFilters 'armeabi', 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
-        }
-
-        packagingOptions {
-            exclude 'META-INF/rxjava.properties'
-        }
-    }
-    defaultConfig {
-        vectorDrawables.useSupportLibrary = true
-    }
 }
 
 dependencies {
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    implementation 'com.jakewharton:butterknife:8.8.1'
-    implementation 'com.android.support:support-vector-drawable:26.1.0'
-    implementation 'com.android.support:support-v4:26.1.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-    implementation 'com.trello.rxlifecycle2:rxlifecycle:2.1.0'
-    implementation 'in.srain.cube:ultra-ptr:1.0.11'
-    implementation 'com.trello.rxlifecycle2:rxlifecycle-components:2.1.0'
-    implementation 'com.airbnb.android:lottie:2.1.0'
-    implementation 'me.yokeyword:fragmentation:1.0.0'
-    implementation 'cn.bingoogolapple:bga-swipebacklayout:1.1.0@aar'
+    testImplementation 'junit:junit:4.12'
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation rootProject.ext.dependencies["appcompat-v7"]
+    implementation rootProject.ext.dependencies["support-v4"]
+    implementation rootProject.ext.dependencies["cardview"]
+    implementation rootProject.ext.dependencies["design"]
+    implementation rootProject.ext.dependencies["recyclerview"]
+    implementation rootProject.ext.dependencies["retrofit2"]
+    implementation rootProject.ext.dependencies["converter-scalars"]
+    implementation rootProject.ext.dependencies["converter-gson"]
+    implementation rootProject.ext.dependencies["adapter-rxjava2"]
+    implementation rootProject.ext.dependencies.rxlifecycle2
+    implementation rootProject.ext.dependencies.rxlifecomponents
+    implementation rootProject.ext.dependencies["dagger"]
+    annotationProcessor rootProject.ext.dependencies["dagger-compiler"]
 
-    //net
-    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
-    implementation 'com.squareup.retrofit2:converter-scalars:2.1.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
-    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
-    implementation 'com.github.VictorAlbertos.RxCache:runtime:1.8.0-2.x'
-    implementation 'com.github.VictorAlbertos.Jolyglot:gson:0.0.3'
-    implementation 'io.reactivex.rxjava2:rxjava:2.0.6'
-    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    implementation 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
-    implementation 'com.trello.rxlifecycle2:rxlifecycle:2.1.0'
-    implementation 'com.trello.rxlifecycle2:rxlifecycle-components:2.1.0'
-    implementation 'com.github.bumptech.glide:glide:3.7.0'
-    implementation 'com.android.support:design:26.+'
-    //dogger
-    implementation 'com.google.dagger:dagger:2.7'
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.7'
-    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.4-4'
-
+    implementation rootProject.ext.dependencies["rxjava"]
+    implementation rootProject.ext.dependencies["rxandroid"]
+    implementation rootProject.ext.dependencies["rxbinding2"]
+    implementation rootProject.ext.dependencies["constraint-layout"]
+    implementation rootProject.ext.dependencies["ultra-ptr"]
+    implementation rootProject.ext.dependencies["fragmentation"]
+    implementation rootProject.ext.dependencies["butterknife"]
+    annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+    implementation rootProject.ext.dependencies["BaseAdapterHelper"]
+    implementation rootProject.ext.dependencies["glide"]
+    implementation rootProject.ext.dependencies["banner"]
+    implementation rootProject.ext.dependencies["viewanimator"]
+    implementation rootProject.ext.dependencies["FlycoDialog"]
+    implementation rootProject.ext.dependencies["PhotoView"]
+    implementation rootProject.ext.dependencies["lottie"]
+    implementation rootProject.ext.dependencies["progressbar"]
+    implementation rootProject.ext.dependencies["swipebacklayout"]
+    implementation rootProject.ext.dependencies["tablayout"]
+    implementation rootProject.ext.dependencies["androideventbus"]
 }

@@ -179,7 +179,14 @@ public abstract class BaseFragment<T1 extends BaseContract.BasePresenter> extend
         return true;
     }
 
-
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        unbinder.unbind();
+        if (mPresenter != null) {
+            mPresenter.detachView();
+        }
+    }
 
     public String getUserId() {
         return AppData.getInstance().getUserId();
